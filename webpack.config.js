@@ -9,8 +9,6 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const environment = process.env.NODE_ENV || 'development';
 const port = process.env.PORT || 9000;
 
-console.log(environment)
-
 module.exports = {
   context: path.join(__dirname, 'src'),
   entry: [
@@ -50,7 +48,7 @@ module.exports = {
         {from: "./*.html"},
 
         // copy assets to the build
-        // {from: "./assets/**/*", to: "dist"}
+        {from: "./assets/"}
       ],
     })
   ],

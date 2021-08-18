@@ -10,6 +10,7 @@ delFile() {
 export -f delFile
 
 delFile ${GAME_ZIP_FILE_NAME}
+delFile "dist/.gitkeep"
 ls dist | grep -P ".*map$" | xargs bash -c 'for arg; do delFile "dist/$arg"; done' _
 
 zip -r -9 $GAME_ZIP_FILE_NAME dist
