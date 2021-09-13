@@ -15,11 +15,11 @@ ls dist | grep -P ".*map$" | xargs bash -c 'for arg; do delFile "dist/$arg"; don
 
 zip -r -9 $GAME_ZIP_FILE_NAME dist
 
-FILE_SIZE=`du -k "$GAME_ZIP_FILE_NAME" | cut -f1`
+FILE_SIZE=`du -b "$GAME_ZIP_FILE_NAME" | cut -f1`
 
-echo "$GAME_ZIP_FILE_NAME is of ${FILE_SIZE}KB"
+echo "$GAME_ZIP_FILE_NAME is of ${FILE_SIZE} bytes"
 
-if (( $FILE_SIZE > 13 )); then
+if (( $FILE_SIZE > 13312 )); then
   echo "-----------------------------------------"
   echo "| FILE NOT VALID FOR JS13KGAMES CONTEST |"
   echo "-----------------------------------------"
